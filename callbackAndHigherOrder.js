@@ -193,15 +193,30 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
+const getUserById = (users, id, callback) =>{
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].id === id) {
+      return callback(users[i])
+    }
+  }
+}
 
 
+// const getUserById = (arr, id, cb) => {
+//   for (let i = 0; i < arr.length; i++) {
+//       if (arr[i].id === id) {
+//           return cb(arr[i])
+//       }
+//   }
+// }
+console.log(getUserById)
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
@@ -220,7 +235,7 @@ var users = [
 */
 
 // CODE HERE
-
+const addingFactory = num => num2 => num + num2
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -234,7 +249,7 @@ var users = [
 */
 
 // CODE HERE
-
+let addTen = addingFactory(10)
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -246,7 +261,8 @@ var users = [
 */
 
 // CODE HERE
-
+console.log(addTen(5))
+console.log(addTen(3225))
 /*
   Let's make another function from the addingFactory. 
 
@@ -259,3 +275,8 @@ var users = [
 */
 
 // CODE HERE
+
+const addFour = addingFactory(4)
+
+console.log(addFour(4))
+console.log(addFour(4444444))
